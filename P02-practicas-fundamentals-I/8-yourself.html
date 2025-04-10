@@ -28,20 +28,57 @@
 <body>
 
   <h1>First Javascript contact</h1>
-  <p>This is the initial text.</p>
+  <p id="text">This is the initial text.</p>
 
-  <button>Hello World</button>
-  <button>Goodbye World</button>
-  <button>Bold</button>
-  <button>Italic</button>
-  <button>Change Color</button>
+  <button id="myButton">Hello World</button>
+  <button id="myButton1">Goodbye World</button>
+  <button id="myButton2">Bold</button>
+  <button id="myButton3">Italic</button>
+  <button id="myButton4">Change Color</button>
 
   <script>
       // A button that, when clicked, changes the text of the paragraph <p> to "Hello World".
+
+        const button = document.getElementById('myButton');
+
+        button.addEventListener('click', function () {
+        const text = document.getElementById('text');
+        text.textContent = "Hello World";
+          });
       // A button that, when clicked, changes the text of the paragraph < p > to "Goodbye World".
+        const button1 = document.getElementById('myButton1');
+
+        button1.addEventListener('click', function () {
+        const text1 = document.getElementById('text');
+        text1.textContent = "Goodbye World";
+          });
       // A button that, when clicked, change the text style to bold.
+      const button2 = document.getElementById('myButton2');
+
+      button2.addEventListener('click', function () {
+      const text2 = document.getElementById('text');
+      text2.style.fontWeight = "bold";
+        });
+
       // A button that, when clicked, change the text style to italic.
+      const button3 = document.getElementById('myButton3');
+
+      button3.addEventListener('click', function () {
+      const text3 = document.getElementById('text');
+      text3.style.fontStyle = "italic";
+        });
       // A button that, when clicked, change the color of the text to red, when it is clicked again set the color back to the initial color.
+      const button4 = document.getElementById('myButton4');
+      const text4 = document.getElementById('text');
+      let red = false;
+      button4.addEventListener('click', function () {
+       if (red) {
+      text.style.color = 'black';
+      } else {
+      text.style.color = 'red';
+     }
+      red = !red;
+      });
 
   </script>
 

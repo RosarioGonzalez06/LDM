@@ -1,16 +1,21 @@
 <p id="myParagraph">Initial Text</p>
 <button id="changeTextButton">Change Text</button>
+<button id="changeTextButton2">Change Text back</button>
 <script>
   // Get the paragraph and button elements
   const paragraph = document.getElementById("myParagraph");
   const button = document.getElementById("changeTextButton");
+  const button2 = document.getElementById("changeTextButton2");
 
   // Add an event listener to the button
   button.addEventListener("click", function () {
     paragraph.textContent = "Text Changed!";
   });
-
   //TODO: Add a second button that changes the text
   // back to "Initial Text" when clicked.
+
+  button2.addEventListener("click", function () {
+    paragraph.textContent = "Initial Text";
+  });
 
 </script>
