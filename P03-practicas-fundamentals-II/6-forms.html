@@ -27,15 +27,29 @@
     <span id="errorConfirmPassword"></span>
 
     <button type="submit">Registrarse</button>
-    <p>Nombre</p>
-    <p>Email</p>
-    <p>Contraseña</p>
-    <p>Confirmar Contraseña:</p>
+    <p id="nombre"></p>
+    <p id="email"></p>
+    <p id="password"></p>
+    <p id="confirmPassword"></p>
   </form>
 
   <script>
     //TODO: When the button Registrarse is clicked, it should display all the input value in their respective <p> tag
+    document.getElementById("registroForm").addEventListener("click", function (){
+
+      var nombre = document.getElementById('nombre').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+
+      // Display the values in the respective <p> tags
+      document.getElementById('nombre').textContent = 'Nombre: ' + nombre;
+      document.getElementById('email').textContent = 'Email: ' + email;
+      document.getElementById('password').textContent = 'Contraseña: ' + password;
+      document.getElementById('confirmPassword').textContent = 'Confirmar Contraseña: ' + confirmPassword;
+  });
     // Add also a validation for the form, if the name is empty, show an error message in the <span> tag with id="errorNombre"
+      
     // If the email is empty, show an error message in the <span> tag with id="errorEmail"
     // If the password is empty, show an error message in the <span> tag with id="errorPassword"
     // If the password and confirm password are not the same, show an error message in the <span> tag with id="errorConfirmPassword"
