@@ -27,32 +27,55 @@
     <span id="errorConfirmPassword"></span>
 
     <button type="submit">Registrarse</button>
-    <p id="nombre"></p>
-    <p id="email"></p>
-    <p id="password"></p>
-    <p id="confirmPassword"></p>
+    <p id="Nom">Nombre</p>
+    <p id="Ema">Email</p>
+    <p id="Contra">Contraseña</p>
+    <p id="ConfContra">Confirmar Contraseña</p>
   </form>
 
   <script>
     //TODO: When the button Registrarse is clicked, it should display all the input value in their respective <p> tag
-    document.getElementById("registroForm").addEventListener("click", function (){
+    document.getElementById("registroForm").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-      var nombre = document.getElementById('nombre').value;
-      var email = document.getElementById('email').value;
-      var password = document.getElementById('password').value;
-      var confirmPassword = document.getElementById('confirmPassword').value;
+    let nombre = document.getElementById('nombre').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+    let confirmPassword = document.getElementById('confirmPassword').value;
+    let error=true;
 
-      // Display the values in the respective <p> tags
-      document.getElementById('nombre').textContent = 'Nombre: ' + nombre;
-      document.getElementById('email').textContent = 'Email: ' + email;
-      document.getElementById('password').textContent = 'Contraseña: ' + password;
-      document.getElementById('confirmPassword').textContent = 'Confirmar Contraseña: ' + confirmPassword;
-  });
     // Add also a validation for the form, if the name is empty, show an error message in the <span> tag with id="errorNombre"
-      
+    if (nombre === '') {
+      document.getElementById('errorNombre').textContent = 'Error: debes ingresar nombre. ';
+      error=false;
+    }
+
     // If the email is empty, show an error message in the <span> tag with id="errorEmail"
+    if (email === '') {
+      document.getElementById('errorEmail').textContent = 'Error: debes ingresar email. ';
+      error=false;
+    }
+
     // If the password is empty, show an error message in the <span> tag with id="errorPassword"
+    if (password === '') {
+      document.getElementById('errorPassword').textContent = 'Error: debes ingresar contraseña. ';
+      error=false;
+    }
+
     // If the password and confirm password are not the same, show an error message in the <span> tag with id="errorConfirmPassword"
+    if (password != confirmPassword) {
+      document.getElementById('errorConfirmPassword').textContent = 'Error: la contraseña no coincide. ';
+      error=false;
+    }
+    if (error==true) {
+      document.getElementById('Nom').textContent = 'Nombre: ' + nombre;
+    document.getElementById('Ema').textContent = 'Email: ' + email;
+    document.getElementById('Contra').textContent = 'Contraseña: ' + password;
+    document.getElementById('ConfContra').textContent = 'Confirmar Contraseña: ' + confirmPassword;
+    }
+
+  });
+
   </script>
 </body>
 
