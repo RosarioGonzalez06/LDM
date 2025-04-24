@@ -21,3 +21,17 @@ buttonchangename.addEventListener('click',function(){
     h1.textContent="Rosario Gonzalez";
 });
 
+const button = document.getElementById("boton3");
+var hob = document.getElementById("hob");
+let hoblist = ['Leer','Escuchar musica','programar'];
+button.addEventListener("click", function () {
+    f(hoblist,hob);
+  });
+
+  function f (list,element){
+    for (let i = 0; i < list.length; i++) {
+        const li=document.createElement('li')
+        li.innerText=list[i];
+        element.appendChild(li);
+    }
+  }
